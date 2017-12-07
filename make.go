@@ -127,7 +127,7 @@ func makeUpstreamSourceTarball(gopkg string) (string, string, map[string]bool, s
 	}
 
 	vendorpath := filepath.Join(tempdir, "src", gopkg, "vendor")
-	if fi, err := os.Stat(vendorpath); err == nil && fi.IsDir() {
+	if false {
 		log.Printf("Deleting upstream vendor/ directory, installing remaining dependencies")
 		if err := os.RemoveAll(vendorpath); err != nil {
 			return "", "", dependencies, autoPkgType, err
